@@ -1,31 +1,35 @@
-[user]
-	name = Leif Bjornson
-	email = labjornson@gmail.com
-[push]
-	default = simple
+[includeIf "gitdir:~/code/"]
+path = .gitconfig-me
+
 [core]
-	autocrlf = true
-    editor = vim
+autocrlf = input
+editor = vim
+
+[push]
+default = simple
+
 [merge]
-	tool = vimdiff
+tool = vimdiff
+
 [mergetool]
-	keeptemporaries = false
-	keepbackups = false
-	prompt = false
-	trustexitcode = false
+keeptemporaries = false
+keepbackups = false
+prompt = false
+trustexitcode = false
+
 [alias]
-	alias = config --get-regexp ^alias\\.
-	last = log -1 --stat
-	cp = cherry-pick
-	co = checkout
-    cob = checkout -b
-	cl = clone
-	ci = commit
-	st = status -sb
-	br = branch
-    fp = fetch -p
-	unstage = reset HEAD --
-	dc = diff --cached
-	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
-    p = push
-    pu = push -u
+alias = config --get-regexp ^alias\\.
+last = log -1 --stat
+cp = cherry-pick
+co = checkout
+cob = checkout -b
+cl = clone
+ci = commit
+st = status -sb
+br = branch
+fp = fetch -p
+unstage = reset HEAD --
+dc = diff --cached
+lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %Cblue<%an>%Creset' --abbrev-commit --date=relative --all
+p = push
+pu = push -u
